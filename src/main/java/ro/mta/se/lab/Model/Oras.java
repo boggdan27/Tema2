@@ -3,11 +3,11 @@ package ro.mta.se.lab.Model;
 public class Oras {
     String nume;
     String tara;
-    int id;
-    double lat;
-    double lon;
+    String id;
+    String lat;
+    String lon;
 
-    public Oras(String nume, String tara, int id, double lat, double lon) {
+    public Oras(String id, String nume,  String lon, String lat, String tara) {
         this.nume = nume;
         this.tara = tara;
         this.id = id;
@@ -23,16 +23,15 @@ public class Oras {
         return tara;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public double getLat() {
+    public String getLat() {
         return lat;
     }
 
-    public double getLon() {
+    public String getLon() {
         return lon;
     }
-
 }

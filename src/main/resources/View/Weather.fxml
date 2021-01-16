@@ -3,11 +3,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.mta.se.lab.Controller.WeatherController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="380.0" layoutY="40.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Search" />
-      <ComboBox layoutX="30.0" layoutY="40.0" prefWidth="150.0" promptText="County" />
-      <ComboBox layoutX="200.0" layoutY="40.0" prefWidth="150.0" promptText="City" />
-      <Label layoutX="70.0" layoutY="130.0" text="Labelinfo" AnchorPane.rightAnchor="481.0" />
+      <Button  layoutX="420.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#search" text="Find" />
+      <ComboBox fx:id="combo_country" layoutX="30.0" layoutY="40.0" onAction="#choseCountry"  onMouseClicked="#selectCountry" prefWidth="150.0" promptText="Country" />
+      <ComboBox fx:id="combo_city" layoutX="200.0" layoutY="40.0" onAction="#choseCity" onMouseClicked="#selectCity" prefWidth="150.0" promptText="City" />
+      <Label fx:id="temperatura_max" layoutX="40.0" layoutY="111.0" prefHeight="17.0" prefWidth="98.0" text="Maxim" AnchorPane.rightAnchor="463.0" />
+      <Label fx:id="temperatura_min" layoutX="60.0" layoutY="133.0" prefHeight="17.0" prefWidth="98.0" text="Minim" AnchorPane.rightAnchor="463.0" />
+      <Label fx:id="presiune" layoutX="80.0" layoutY="155.0" prefHeight="17.0" prefWidth="98.0" text="Presiune" AnchorPane.rightAnchor="463.0" />
+      <Label fx:id="wind" layoutX="100.0" layoutY="177.0" prefHeight="17.0" prefWidth="98.0" text="Wind" AnchorPane.rightAnchor="463.0" />
+      <Label fx:id="temperatura" layoutX="120.0" layoutY="199.0" prefHeight="17.0" prefWidth="98.0" text="Temperatura" AnchorPane.rightAnchor="463.0" />
+
    </children>
 </AnchorPane>
