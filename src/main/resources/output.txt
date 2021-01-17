@@ -1,0 +1,3 @@
+oras Boston tara US temperatura 1.59 temp maxim 2.22 temp minim 0.56 wind 8.75 presiune 994.0
+oras London tara GB temperatura 7.39 temp maxim 8.33 temp minim 6.67 wind 5.66 presiune 1025.0
+oras Bucharest tara RO temperatura -2.93 temp maxim -2.78 temp minim -3.0 wind 3.09 presiune 1016.0

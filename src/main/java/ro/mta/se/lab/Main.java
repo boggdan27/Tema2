@@ -15,6 +15,7 @@ package ro.mta.se.lab;
 
 public class Main extends Application
 {
+
     private ObservableList<Oras> lista_orase = FXCollections.observableArrayList();
 
 

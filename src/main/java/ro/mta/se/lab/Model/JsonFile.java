@@ -5,9 +5,14 @@ import com.sun.prism.shader.Solid_TextureRGB_AlphaTest_Loader;
 import  org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * Aceasta clasa este folosita in WeatherController.
+ * Obtin informatiile de la raspunsul requestului.
+ */
+
 public class JsonFile {
 
-    //il folosesc in controller
+
     String file;
 
     public JsonFile(String file) {
@@ -32,13 +37,7 @@ public class JsonFile {
         return  String.valueOf(aux.getJSONObject("main").getFloat("temp"));
 
     }
-    public String get_action()
-    {
-        JSONObject aux=new JSONObject(this.file);
-        JSONArray weather=(JSONArray)aux.get("weather");
-        JSONObject weather1=(JSONObject)weather.get(0);
-        return (String)weather1.get("main");
-    }
+
     public String get_wind_speed()
     {
         JSONObject aux=new JSONObject(file);

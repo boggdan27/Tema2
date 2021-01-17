@@ -1,5 +1,9 @@
 package ro.mta.se.lab.Model;
 
+/**
+ * Clasa oras contine toate informatiile pentru orasele aflate in in.txt
+ */
+
 public class Oras {
     String nume;
     String tara;

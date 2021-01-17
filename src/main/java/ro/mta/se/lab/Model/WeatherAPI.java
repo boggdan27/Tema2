@@ -6,6 +6,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/***
+ * Aceasta clasa face conexiunea catre OpenWeatherMap.
+ * Url-ul contine orasul si key-ul userului.
+ * Daca exista conexiune, incep sa citesc rezultatul.
+ *
+ */
+
+
 
 public class WeatherAPI {
 
