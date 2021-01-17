@@ -50,6 +50,10 @@ public class WeatherController {
     @FXML
     private ComboBox<String> combo_city;
 
+
+    /**
+     * Se afiseaza tarile in combobox
+     */
     @FXML
     private void selectCountry()
     {
@@ -62,11 +66,20 @@ public class WeatherController {
 
     }
 
+    /**
+     * se memoreaza tara selectata
+     */
+
     @FXML
     private void choseCountry()
     {
         tara_selectata = combo_country.getValue();
     }
+
+    /**
+     * Se verifica daca a fost selecatata o tara.
+     * Daca da, se face afisarea oraselor din acea tara.
+     */
 
     @FXML
     private void selectCity()
@@ -86,13 +99,21 @@ public class WeatherController {
 
     }
 
-
+    /**
+     * Se memoreaza tara selectata
+     */
     @FXML
     private void choseCity()
     {
         oras_selectat=combo_city.getValue();
     }
 
+    /**
+     * Se verifica sa fie amandoua comboboxuri selectate.
+     * Se face un request pentru a obtine datele despre vreme.
+     * Se foloseste clasa JsonFile pentru a obtine valorile necesare.
+     * Se scriu datele in fisier.
+     */
 
     @FXML
     public void search() throws IOException
