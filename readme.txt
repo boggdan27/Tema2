@@ -1,1 +1,0 @@
-Aceasta este o aplicatie cu functii meteorologice
