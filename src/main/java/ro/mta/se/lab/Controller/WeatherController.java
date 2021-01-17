@@ -10,8 +10,16 @@ import ro.mta.se.lab.Model.JsonFile;
 import ro.mta.se.lab.Model.Oras;
 import ro.mta.se.lab.Model.WeatherAPI;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Vector;
+
+/**
+ * Obtinerea informatiilor de la request si afisarea acestora in interfata.
+ */
+
 
 public class WeatherController {
 
@@ -91,11 +99,17 @@ public class WeatherController {
     {
         if(tara_selectata != null && oras_selectat != null)
         {
+            String orass = null;
+            String taraa = null;
+            int ok=0;
             for(int i =0;i<orase.size();i++)
             {
                 if(orase.get(i).getTara().equals(tara_selectata) && orase.get(i).getNume().equals(oras_selectat))
                 {
                     id = orase.get(i).getId();
+                    orass = orase.get(i).getNume();
+                    taraa = orase.get(i).getTara();
+                    ok=1;
                 }
             }
             WeatherAPI request = new WeatherAPI(oras_selectat);
@@ -107,6 +121,19 @@ public class WeatherController {
             wind.setText("Vantul este " + json.get_wind_speed());
             presiune.setText("Presiunea este "+ json.get_presiune());
 
+            if(ok == 1)
+            {
+                File log = new File ("./src/main/resources/output.txt");
+                if(log.exists()==false)
+                {
+                    log.createNewFile();
+                }
+
+
+                PrintWriter out = new PrintWriter(new FileWriter(log, true));
+                out.append("oras "+ orass + " tara " + taraa + " temperatura " + json.get_temp().toString() + " temp maxim " + json.get_temp_max().toString() +" temp minim "+ json.get_temp_min().toString()+ " wind "+ json.get_wind_speed()+" presiune "+json.get_presiune()+"\n");
+                out.close();
+            }
 
         }
 

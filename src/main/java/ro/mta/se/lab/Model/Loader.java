@@ -9,6 +9,11 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Vector;
 
+/**
+ * Loader citeste din in.txt si face o lista de orase.
+ * Functia de check verifica daca exista o tara deja in lista.
+ */
+
 public class Loader
 {
     private Vector<String> tara = new Vector<String>(100);
@@ -23,9 +28,11 @@ public class Loader
     public int check(Vector<String> t, String p)
     {
         int ok = 0;
-        for (int i = 0; i < t.size(); i++) {
-            if (t.get(i).equals(p)) {
-                ok++;
+        for (int i = 0; i < t.size(); i++)
+        {
+            if (t.get(i).equals(p))
+            {
+                ok=1;
                 break;
             }
         }
@@ -41,21 +48,21 @@ public class Loader
             String data = cuv.nextLine();
 
             String[] splituit = data.split("\n");
-           // System.out.println(arrSplit[0] ); // split0 e o linie
+           // System.out.println(cuvinte[0] ); // split0 e o linie
 
 
 
             for (int i = 0; i < splituit.length; i++)
             {
-                    String[] littleparts = splituit[i].split("\t");
-                    // System.out.println(littleparts[0] +"____"+littleparts[1]);
+                    String[] cuvinte = splituit[i].split("\t");
+                    // System.out.println(cuvinte[0] +"____"+cuvinte[1]);
 
-                    Oras aux = new Oras(littleparts[0], littleparts[1], littleparts[2], littleparts[3], littleparts[4]);
+                    Oras aux = new Oras(cuvinte[0], cuvinte[1], cuvinte[2], cuvinte[3], cuvinte[4]);
                     locatii.add(aux);
 
-                   if(check(tara,littleparts[4])==0)
+                   if(check(tara,cuvinte[4])==0)
                    {
-                       tara.add(littleparts[4]);
+                       tara.add(cuvinte[4]);
                    }
             }
         }
