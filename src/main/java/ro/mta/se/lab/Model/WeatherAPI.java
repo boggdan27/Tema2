@@ -26,6 +26,10 @@ public class WeatherAPI {
         this.oras_cautat = oras_cautat;
     }
 
+    /**
+     * conexiunea cu site-ul pentru a obtine datele despre vreme
+     */
+
     public String weather(String oras) throws IOException
     {
         URL url =new URL("http://api.openweathermap.org/data/2.5/weather?q="+oras+"&units=metric&appid="+ key);

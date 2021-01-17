@@ -25,6 +25,10 @@ public class Loader
         citire_orase();
     }
 
+
+    /**
+     * Verificare daca exista deja o tara in lista
+     */
     public int check(Vector<String> t, String p)
     {
         int ok = 0;
@@ -38,6 +42,10 @@ public class Loader
         }
         return ok;
     }
+
+    /**
+     * Citire din fisier si inserarea in lista de orase
+     */
     private void citire_orase() throws FileNotFoundException
     {
         File input_File = new File("./src/main/resources/in.txt");
